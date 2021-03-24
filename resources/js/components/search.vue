@@ -22,7 +22,7 @@ export default {
     },
     methods: {
         search() {
-            axios.get('https://mail-test-laravel.herokuapp.com/api/tests/search', { params: { keyword: this.keyword } })
+            axios.get('http://127.0.0.1:8000/api/tests/search', { params: { keyword: this.keyword } })
                 .then(res => this.Tests = res.data)
                 .catch(error => {});
         }

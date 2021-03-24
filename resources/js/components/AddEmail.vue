@@ -30,12 +30,7 @@
             addEmail() {
 
                 this.axios
-                    .post('https://mail-test-laravel.herokuapp.com/api/tests/', this.test, {
-                        headers: {
-                           "Access-Control-Allow-Origin": "*",
-                            "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
-                            "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token"
-                            }
+                    .post('http://127.0.0.1:8000/api/tests/', this.test, {
                     })
                     .then(response => (
                         this.$router.push({name: 'home'})

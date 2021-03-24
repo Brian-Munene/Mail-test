@@ -48,21 +48,21 @@
         },
         methods: {
             getData(page = 1) {
-            axios.get('https://mail-test-laravel.herokuapp.com/api/tests?page=' + page)
+            axios.get('http://127.0.0.1:8000/api/tests?page=' + page)
                 .then(response => {
                     this.tests = response.data;
                 });
         },
             deleteTest(id) {
                 this.axios
-                    .delete(`https://mail-test-laravel.herokuapp.com/api/tests/${id}`)
+                    .delete(`http://127.0.0.1:8000/api/tests/${id}`)
                     .then(response => {
                         let i = this.tests.map(item => item.id).indexOf(id); // find index of your object
                         this.tests.splice(i, 1)
                     });
             },
             sendMail(){
-                this.axios.get(`https://mail-test-laravel.herokuapp.com/api/send/mail`)
+                this.axios.get(`http://127.0.0.1:8000/api/send/mail`)
                         .then(response => {
                             alert(response)
                         });
