@@ -1909,12 +1909,11 @@ __webpack_require__.r(__webpack_exports__);
     addEmail: function addEmail() {
       var _this = this;
 
-      this.axios.post('http://mail-test-laravel.herokuapp.com/api/tests/', this.test, {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
-          "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token"
-        }
+      this.axios.post('http://mail-test-laravel.herokuapp.com/api/tests/', this.test, {// headers: {
+        //    "Access-Control-Allow-Origin": "*",
+        //     "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
+        //     "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token"
+        //     }
       }).then(function (response) {
         return _this.$router.push({
           name: 'home'
