@@ -11,9 +11,9 @@ class VerifyCsrfToken extends Middleware
      *
      * @var array
      */
-    protected $except = [
-        'api/*',
-       '127.0.0.1:8000',
-       'https://mail-test-laravel.herokuapp.com'
-,    ];
+//     protected $except = [
+//         'api/*',
+//        '127.0.0.1:8000',
+//        'https://mail-test-laravel.herokuapp.com'
+// ,    ];
 }

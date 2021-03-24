@@ -1,6 +1,6 @@
 <template>
     <div>
-        <input type="text" v-model="keyword">
+        <input type="text" v-model="keyword" placeholder="Search using name">
         <ul v-if="Tests.length > 0">
             <li v-for="test in Tests" :key="test.id" v-text="test.name"></li>
         </ul>

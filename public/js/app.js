@@ -39196,7 +39196,7 @@ var render = function() {
           expression: "keyword"
         }
       ],
-      attrs: { type: "text" },
+      attrs: { type: "text", placeholder: "Search using name" },
       domProps: { value: _vm.keyword },
       on: {
         input: function($event) {
