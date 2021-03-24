@@ -53,7 +53,6 @@
             getData(page = 1) {
             axios.get('http://mail-test-laravel.herokuapp.com/api/tests?page=' + page)
                 .then(response => {
-                    console.log(response.data)
                     this.tests = response.data;
                 });
         },

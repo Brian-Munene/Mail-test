@@ -1997,7 +1997,6 @@ __webpack_require__.r(__webpack_exports__);
 
       var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
       axios.get('http://mail-test-laravel.herokuapp.com/api/tests?page=' + page).then(function (response) {
-        console.log(response.data);
         _this.tests = response.data;
       });
     },
