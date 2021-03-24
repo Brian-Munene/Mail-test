@@ -38,7 +38,6 @@
             this.axios
                 .get('http://mail-test-laravel.herokuapp.com/api/tests')
                 .then(response => {
-                    console.log(response.data.data)
                     this.tests = response.data.data;
                 });
         },

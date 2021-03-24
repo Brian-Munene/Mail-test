@@ -1981,7 +1981,6 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     this.axios.get('http://mail-test-laravel.herokuapp.com/api/tests').then(function (response) {
-      console.log(response.data.data);
       _this.tests = response.data.data;
     });
   },
