@@ -21,12 +21,14 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*'],
+    // 'allowed_origins' => ['*'],
+    'allowed_origins' => ['http://localhost:8000', 'https://mail-test-laravel.herokuapp.com'],
 
     'allowed_origins_patterns' => [],
+    
 
-    // 'allowed_headers' => ['*'],
-    'allowed_headers' => ['content-type', 'accept', 'x-custom-header', 'Access-Control-Allow-Origin'],
+    'allowed_headers' => ['*'],
+    // 'allowed_headers' => ['content-type', 'accept', 'x-custom-header', 'Access-Control-Allow-Origin'],
 
     // 'exposed_headers' => [],
 'exposed_headers' => ['x-custom-response-header'],
