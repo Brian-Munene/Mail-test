@@ -75,4 +75,14 @@ class TestController extends Controller
 
         return response()->json('The email has been successfully deleted');
     }
+
+    /**
+     * Search for an email address
+     * 
+     */
+    public function search(Request $request)
+    {
+        $test = Test::where('name', 'LIKE','%'.$request->keyword.'%')->get();
+        return response()->json($test); 
+    }
 }

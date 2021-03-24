@@ -2,6 +2,10 @@
     <div>
         <h3 class="text-center">All Emails</h3><br/>
 
+        <div class="card-body">
+                  <search-component></search-component>
+        </div>
+
         <table class="table  table-striped">
             <thead>
             <tr>
@@ -18,7 +22,7 @@
                     <div class="btn-group" role="group">
                         <router-link :to="{name: 'edit', params: { id: test.id }}" class="btn btn-warning">Update
                         </router-link>
-                        <button class="btn btn-danger" @click="deleteBook(test.id)"> Delete</button>
+                        <button class="btn btn-danger" @click="deleteTest(test.id)"> Delete</button>
                     </div>
                 </td>
             </tr>
@@ -51,14 +55,14 @@
                     this.tests = response.data;
                 });
         },
-            deleteBook(id) {
+            deleteTest(id) {
                 this.axios
                     .delete(`http://mail-test-laravel.herokuapp.com/api/tests/${id}`)
                     .then(response => {
                         let i = this.tests.map(item => item.id).indexOf(id); // find index of your object
                         this.tests.splice(i, 1)
                     });
-            }
+            },
         }
     }
 </script>
