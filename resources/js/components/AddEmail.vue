@@ -31,11 +31,11 @@
 
                 this.axios
                     .post('http://mail-test-laravel.herokuapp.com/api/tests/', this.test, {
-                        // headers: {
-                        //    "Access-Control-Allow-Origin": "*",
-                        //     "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
-                        //     "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token"
-                        //     }
+                        headers: {
+                           "Access-Control-Allow-Origin": "*",
+                            "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
+                            "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token"
+                            }
                     })
                     .then(response => (
                         this.$router.push({name: 'home'})
