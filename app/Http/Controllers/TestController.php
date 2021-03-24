@@ -31,7 +31,7 @@ class TestController extends Controller
             'email' => $request->input('email')
         ]);
         $test->save();
-
+        echo($test);
         return response()->json('The emails have been successfully added');
     }
 
@@ -57,6 +57,7 @@ class TestController extends Controller
     public function update(Request $request, $id)
     {
         $test = Test::find($id);
+        echo($test);
         $test->update($request->all());
 
         return response()->json('The email has been successfully updated');
@@ -83,6 +84,7 @@ class TestController extends Controller
     public function search(Request $request)
     {
         $test = Test::where('name', 'LIKE','%'.$request->keyword.'%')->get();
+        echo($test);
         return response()->json($test); 
     }
 }
