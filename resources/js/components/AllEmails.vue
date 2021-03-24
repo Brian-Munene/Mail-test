@@ -11,7 +11,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr v-for="test in tests" :key="test.id">
+            <tr v-for="test in tests.data" :key="test.id">
                 <td>{{ test.name }}</td>
                 <td>{{ test.email }}</td>
                 <td>
@@ -24,6 +24,7 @@
             </tr>
             </tbody>
         </table>
+        <pagination :data="test" @pagination-change-page="getData"></pagination>
     </div>
 </template>
 
@@ -38,10 +39,18 @@
             this.axios
                 .get('http://mail-test-laravel.herokuapp.com/api/tests')
                 .then(response => {
-                    this.tests = response.data.data;
+                    this.tests = response.data;
                 });
+
+            this.getData();
         },
         methods: {
+            getData(page = 1) {
+            axios.get('http://mail-test-laravel.herokuapp.com/api/tests?page=' + page)
+                .then(response => {
+                    this.tests = response.data;
+                });
+        },
             deleteBook(id) {
                 this.axios
                     .delete(`http://mail-test-laravel.herokuapp.com/api/tests/${id}`)
