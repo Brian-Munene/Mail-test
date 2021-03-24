@@ -24,7 +24,7 @@
             </tr>
             </tbody>
         </table>
-        <pagination :data="test" @pagination-change-page="getData"></pagination>
+        <pagination :data="tests" @pagination-change-page="getData"></pagination>
     </div>
 </template>
 

@@ -38844,7 +38844,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("pagination", {
-        attrs: { data: _vm.test },
+        attrs: { data: _vm.tests },
         on: { "pagination-change-page": _vm.getData }
       })
     ],
