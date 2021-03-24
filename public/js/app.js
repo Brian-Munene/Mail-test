@@ -2151,7 +2151,7 @@ __webpack_require__.r(__webpack_exports__);
     search: function search() {
       var _this = this;
 
-      axios.get('https://mail-test-laravel.herokuapp.com/api/tests/search/', {
+      axios.get('https://mail-test-laravel.herokuapp.com/api/tests/search', {
         params: {
           keyword: this.keyword
         }
