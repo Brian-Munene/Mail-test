@@ -1983,12 +1983,6 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   created: function created() {
-    // this.axios
-    //     .get('http://mail-test-laravel.herokuapp.com/api/tests')
-    //     .then(response => {
-    //         console.log(response.data)
-    //         this.tests = response.data;
-    //     });
     this.getData();
   },
   methods: {
