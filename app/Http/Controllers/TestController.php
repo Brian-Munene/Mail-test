@@ -92,7 +92,7 @@ class TestController extends Controller
     public function sendMail(Request  $request) 
     {
         $details = Test::whereNotNull('email')
-                                ->pluck('email');
+                                ->get();
         echo($details);
         // SendEmail::dispatch($details);
         return response()->json($details);
