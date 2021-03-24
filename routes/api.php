@@ -18,12 +18,14 @@ use App\Http\Controllers\TestController;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::group(['middleware' => 'cors', ], function () {
 
-Route::resource('tests', TestController::class, ['except' => ['create', 'edit']]);
-
-//Search for auser using the name
+    //Search for auser using the name
 Route::get('/tests/search', [TestController::class, 'search']);
 
 // Send email to all registered addresses
 Route::get('/send/mail', [TestController::class,'sendMail']);
+
+Route::resource('tests', TestController::class, ['except' => ['create', 'edit']]);
+});
 
