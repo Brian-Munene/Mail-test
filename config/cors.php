@@ -17,21 +17,17 @@ return [
 
     
 
-    'paths' => ['api/tests*'],
+    'paths' => ['api/*'],
 
     'allowed_methods' => ['*'],
 
     'allowed_origins' => ['*'],
-    // 'allowed_origins' => ['http://localhost:8000', 'https://mail-test-laravel.herokuapp.com'],
 
     'allowed_origins_patterns' => [],
     
-
     'allowed_headers' => ['*'],
-    // 'allowed_headers' => ['content-type', 'accept', 'x-custom-header', 'Access-Control-Allow-Origin'],
 
-    // 'exposed_headers' => [],
-'exposed_headers' => ['x-custom-response-header'],
+    'exposed_headers' => [],
 
     'max_age' => 0,
 

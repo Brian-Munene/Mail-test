@@ -18,7 +18,7 @@ use App\Http\Controllers\TestController;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::group(['middleware' => 'cors', ], function () {
+Route::group(['middleware' =>  'cors'],  function () {
 
     //Search for auser using the name
 Route::get('/tests/search', [TestController::class, 'search']);
