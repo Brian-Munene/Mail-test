@@ -63,7 +63,7 @@
             },
             sendMail(){
                 this.axios.get(`https://mail-test-laravel.herokuapp.com/api/send/mail`)
-                        .then(rsponse => {
+                        .then(response => {
                             alert(response)
                         });
             },

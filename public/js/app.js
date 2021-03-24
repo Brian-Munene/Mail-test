@@ -2010,7 +2010,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     sendMail: function sendMail() {
-      this.axios.get("https://mail-test-laravel.herokuapp.com/api/send/mail").then(function (rsponse) {
+      this.axios.get("https://mail-test-laravel.herokuapp.com/api/send/mail").then(function (response) {
         alert(response);
       });
     }
