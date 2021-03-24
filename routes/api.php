@@ -22,4 +22,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::resource('tests', TestController::class, ['except' => ['create', 'edit']]);
 
 //Search for auser using the name
-Route::get('/search', [TestController::class, 'search']);
+Route::get('/tests/search', [TestController::class, 'search']);
