@@ -44,14 +44,6 @@ require __DIR__.'/../vendor/autoload.php';
 |
 */
 
-header("Access-Control-Allow-Origin: *");
-//header("Access-Control-Allow-Methods", "DELETE, POST, GET, OPTIONS");
-header("Access-Control-Allow-Headers:*");
-
-if ($_SERVER['REQUEST_METHOD'] == "OPTIONS") {//send back preflight request response
-return "";
-}
-
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
 $kernel = $app->make(Kernel::class);
