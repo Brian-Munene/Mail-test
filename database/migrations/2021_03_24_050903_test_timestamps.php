@@ -13,7 +13,7 @@ class TestTimestamps extends Migration
      */
     public function up()
     {
-         Schema::create('tests', function (Blueprint $table) {
+         Schema::table('tests', function (Blueprint $table) {
              $table->timestamps();
         });
 
