@@ -30,7 +30,7 @@
             addEmail() {
 
                 this.axios
-                    .post('http://localhost:8000/api/tests/', this.test)
+                    .post('http://mail-test-laravel.herokuapp.com/api/tests/', this.test)
                     .then(response => (
                         this.$router.push({name: 'home'})
                         // console.log(response.data)

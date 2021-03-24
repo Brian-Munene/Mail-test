@@ -36,7 +36,7 @@
         },
         created() {
             this.axios
-                .get('http://localhost:8000/api/tests')
+                .get('http://mail-test-laravel.herokuapp.com/api/tests')
                 .then(response => {
                     this.tests = response.data;
                 });
@@ -44,7 +44,7 @@
         methods: {
             deleteBook(id) {
                 this.axios
-                    .delete(`http://localhost:8000/api/test/${id}`)
+                    .delete(`http://mail-test-laravel.herokuapp.com/api/tests/${id}`)
                     .then(response => {
                         let i = this.tests.map(item => item.id).indexOf(id); // find index of your object
                         this.tests.splice(i, 1)

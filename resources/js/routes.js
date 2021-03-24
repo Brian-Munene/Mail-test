@@ -1,21 +1,21 @@
-import AllEmails from "./components/all_emails.vue";
-import AddEmail from "./components/add_email.vue";
-import UpdateEmail from "./components/update_email.vue";
+import AllEmails from "./components/AllEmails.vue";
+import AddEmail from "./components/AddEmail.vue";
+import UpdateEmail from "./components/UpdateEmail.vue";
 
 export const routes = [
-           {
-               name: "home",
-               path: "/",
-               component: AllEmails
-           },
-           {
-               name: "add",
-               path: "/add",
-               component: AddEmail
-           },
-           {
-               name: "edit",
-               path: "/edit/:id",
-               component: UpdateEmail
-           }
-       ];
+    {
+        name: "home",
+        path: "/",
+        component: AllEmails
+    },
+    {
+        name: "add",
+        path: "/add",
+        component: AddEmail
+    },
+    {
+        name: "edit",
+        path: "/edit/:id",
+        component: UpdateEmail
+    }
+];
