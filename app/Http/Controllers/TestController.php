@@ -97,7 +97,7 @@ class TestController extends Controller
         array_push($emails, $det.email);
         }
         
-        // SendEmail::dispatch($details);
+        SendEmail::dispatch($emails);
         return response()->json($emails);
     }
 }
