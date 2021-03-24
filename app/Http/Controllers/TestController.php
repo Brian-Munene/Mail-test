@@ -84,4 +84,17 @@ class TestController extends Controller
         $test = Test::where('name', 'LIKE','%'.$request->keyword.'%')->get();
         return response()->json($test); 
     }
+
+    /**
+     * Send mail to alll CreateUser
+     * 
+     */ 
+    public function sendMail(Request  $request) 
+    {
+        $details = Test::whereNotNull('email')
+                                ->pluck('email');
+        
+        SendEmail::dispatch($details);
+        return response()->json('The emails are being sent in the background');
+    }
 }

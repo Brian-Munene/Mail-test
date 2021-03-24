@@ -29,6 +29,9 @@
             </tbody>
         </table>
         <pagination :data="tests" @pagination-change-page="getData"></pagination>
+        <div class="float-right">
+        <button type="button" class="btn btn-success" @click="sendMail()">Send Emails</button>
+    </div>
     </div>
 </template>
 
@@ -57,6 +60,12 @@
                         let i = this.tests.map(item => item.id).indexOf(id); // find index of your object
                         this.tests.splice(i, 1)
                     });
+            },
+            sendMail(){
+                this.axios.get(`https://mail-test-laravel.herokuapp.com/api/send/mail`)
+                        .then(rsponse => {
+                            alert(response)
+                        });
             },
         }
     }

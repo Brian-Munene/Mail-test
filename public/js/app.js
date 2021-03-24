@@ -1976,6 +1976,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2004,6 +2007,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
         _this2.tests.splice(i, 1);
+      });
+    },
+    sendMail: function sendMail() {
+      this.axios.get("https://mail-test-laravel.herokuapp.com/api/send/mail").then(function (rsponse) {
+        alert(response);
       });
     }
   }
@@ -38969,7 +38977,23 @@ var render = function() {
       _c("pagination", {
         attrs: { data: _vm.tests },
         on: { "pagination-change-page": _vm.getData }
-      })
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "float-right" }, [
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-success",
+            attrs: { type: "button" },
+            on: {
+              click: function($event) {
+                return _vm.sendMail()
+              }
+            }
+          },
+          [_vm._v("Send Emails")]
+        )
+      ])
     ],
     1
   )

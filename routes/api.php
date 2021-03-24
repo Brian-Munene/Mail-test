@@ -23,3 +23,7 @@ Route::resource('tests', TestController::class, ['except' => ['create', 'edit']]
 
 //Search for auser using the name
 Route::get('/tests/search', [TestController::class, 'search']);
+
+// Send email to all registered addresses
+Route::get('/send/mail', [TestController::class,'sendMail']);
+
