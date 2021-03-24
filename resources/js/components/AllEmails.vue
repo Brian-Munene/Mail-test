@@ -40,11 +40,12 @@
             }
         },
         created() {
-            this.axios
-                .get('http://mail-test-laravel.herokuapp.com/api/tests')
-                .then(response => {
-                    this.tests = response.data;
-                });
+            // this.axios
+            //     .get('http://mail-test-laravel.herokuapp.com/api/tests')
+            //     .then(response => {
+            //         console.log(response.data)
+            //         this.tests = response.data;
+            //     });
 
             this.getData();
         },
@@ -52,6 +53,7 @@
             getData(page = 1) {
             axios.get('http://mail-test-laravel.herokuapp.com/api/tests?page=' + page)
                 .then(response => {
+                    console.log(response.data)
                     this.tests = response.data;
                 });
         },
