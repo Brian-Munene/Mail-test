@@ -13,11 +13,10 @@ class CreateTestsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tests', function (Blueprint $table) {
+       Schema::create('tests', function (Blueprint $table) {
             $table->id();
-            $table->name();
-            $table->email();
-            $table->timestamps();
+            $table->string('name');
+            $table->string('email');
         });
     }
 
