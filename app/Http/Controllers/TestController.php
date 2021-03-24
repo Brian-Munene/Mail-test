@@ -94,7 +94,7 @@ class TestController extends Controller
         $details = Test::whereNotNull('email')
                                 ->pluck('email');
         echo($details);
-        SendEmail::dispatch($details);
-        return response()->json('The emails are being sent in the background');
+        // SendEmail::dispatch($details);
+        return response()->json($details);
     }
 }
