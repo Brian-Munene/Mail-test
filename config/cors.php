@@ -25,11 +25,13 @@ return [
 
     'allowed_origins_patterns' => [],
 
-    'allowed_headers' => ['*'],
+    // 'allowed_headers' => ['*'],
+
+    'allowed_headers' => ['X-Custom-Header', 'Upgrade-Insecure-Requests', '*'],
 
     'exposed_headers' => [],
 
-    'max_age' => 0,
+    'max_age' => false,
 
     'supports_credentials' => false,
 
