@@ -91,10 +91,13 @@ class TestController extends Controller
      */ 
     public function sendMail(Request  $request) 
     {
-        $details = Test::whereNotNull('email')
-                                ->get();
-        echo($details);
+        $emails = [];
+        $details = Test::all();
+        foreach ($details as $det) {
+        array_push($emails, $det.email);
+        }
+        
         // SendEmail::dispatch($details);
-        return response()->json($details);
+        return response()->json($emails);
     }
 }
