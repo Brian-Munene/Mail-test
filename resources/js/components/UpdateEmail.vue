@@ -23,15 +23,15 @@
     export default {
         data() {
             return {
-                book: {}
+                test: {}
             }
         },
         created() {
             this.axios
                 .get(`http://mail-test-laravel.herokuapp.com/api/tests/${this.$route.params.id}`)
                 .then((response) => {
-                    this.book = response.data;
-                    // console.log(response.data);
+                    this.test = response.data;
+                    console.log(response.data);
                 });
         },
         methods: {

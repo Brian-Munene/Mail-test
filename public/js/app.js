@@ -1902,14 +1902,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      book: {}
+      test: {}
     };
   },
   methods: {
     addEmail: function addEmail() {
       var _this = this;
 
-      this.axios.post('http://mail-test-laravel.herokuapp.com/api/tests/', this.test).then(function (response) {
+      this.axios.post('http://mail-test-laravel.herokuapp.com/api/tests/', this.test, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
+          "Access-Control-Allow-Headers": "Origin, Content-Type, X-Auth-Token"
+        }
+      }).then(function (response) {
         return _this.$router.push({
           name: 'home'
         }) // console.log(response.data)
@@ -1968,14 +1974,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      books: []
+      tests: []
     };
   },
   created: function created() {
     var _this = this;
 
     this.axios.get('http://mail-test-laravel.herokuapp.com/api/tests').then(function (response) {
-      _this.tests = response.data;
+      console.log(response.data.data);
+      _this.tests = response.data.data;
     });
   },
   methods: {
@@ -2066,14 +2073,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      book: {}
+      test: {}
     };
   },
   created: function created() {
     var _this = this;
 
     this.axios.get("http://mail-test-laravel.herokuapp.com/api/tests/".concat(this.$route.params.id)).then(function (response) {
-      _this.book = response.data; // console.log(response.data);
+      _this.test = response.data;
+      console.log(response.data);
     });
   },
   methods: {
@@ -38102,19 +38110,19 @@ var render = function() {
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.tests.name,
-                    expression: "tests.name"
+                    value: _vm.test.name,
+                    expression: "test.name"
                   }
                 ],
                 staticClass: "form-control",
                 attrs: { type: "text" },
-                domProps: { value: _vm.tests.name },
+                domProps: { value: _vm.test.name },
                 on: {
                   input: function($event) {
                     if ($event.target.composing) {
                       return
                     }
-                    _vm.$set(_vm.tests, "name", $event.target.value)
+                    _vm.$set(_vm.test, "name", $event.target.value)
                   }
                 }
               })
@@ -38184,12 +38192,12 @@ var render = function() {
     _c("h3", { staticClass: "text-center" }, [_vm._v("All Emails")]),
     _c("br"),
     _vm._v(" "),
-    _c("table", { staticClass: "table table-bordered" }, [
+    _c("table", { staticClass: "table  table-striped" }, [
       _vm._m(0),
       _vm._v(" "),
       _c(
         "tbody",
-        _vm._l(_vm.books, function(test) {
+        _vm._l(_vm.tests, function(test) {
           return _c("tr", { key: test.id }, [
             _c("td", [_vm._v(_vm._s(test.name))]),
             _vm._v(" "),
@@ -38206,7 +38214,7 @@ var render = function() {
                       staticClass: "btn btn-warning",
                       attrs: { to: { name: "edit", params: { id: test.id } } }
                     },
-                    [_vm._v("Edit\n                    ")]
+                    [_vm._v("Update\n                    ")]
                   ),
                   _vm._v(" "),
                   _c(
@@ -38219,7 +38227,7 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("Delete")]
+                    [_vm._v(" Delete")]
                   )
                 ],
                 1
@@ -38241,7 +38249,9 @@ var staticRenderFns = [
       _c("tr", [
         _c("th", [_vm._v("Name")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Email")])
+        _c("th", [_vm._v("Email")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Action")])
       ])
     ])
   }
