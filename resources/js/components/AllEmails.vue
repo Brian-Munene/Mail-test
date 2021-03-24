@@ -45,14 +45,14 @@
         },
         methods: {
             getData(page = 1) {
-            axios.get('http://mail-test-laravel.herokuapp.com/api/tests?page=' + page)
+            axios.get('https://mail-test-laravel.herokuapp.com/api/tests?page=' + page)
                 .then(response => {
                     this.tests = response.data;
                 });
         },
             deleteTest(id) {
                 this.axios
-                    .delete(`http://mail-test-laravel.herokuapp.com/api/tests/${id}`)
+                    .delete(`https://mail-test-laravel.herokuapp.com/api/tests/${id}`)
                     .then(response => {
                         let i = this.tests.map(item => item.id).indexOf(id); // find index of your object
                         this.tests.splice(i, 1)

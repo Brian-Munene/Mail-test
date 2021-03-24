@@ -28,7 +28,7 @@
         },
         created() {
             this.axios
-                .get(`http://mail-test-laravel.herokuapp.com/api/tests/${this.$route.params.id}`)
+                .get(`https://mail-test-laravel.herokuapp.com/api/tests/${this.$route.params.id}`)
                 .then((response) => {
                     this.test = response.data;
                     console.log(response.data);
@@ -37,7 +37,7 @@
         methods: {
             updateEmail() {
                 this.axios
-                    .post(`http://mail-test-laravel.herokuapp.com/api/tests/${this.$route.params.id}`, this.test)
+                    .post(`https://mail-test-laravel.herokuapp.com/api/tests/${this.$route.params.id}`, this.test)
                     .then((response) => {
                         this.$router.push({name: 'home'});
                     });

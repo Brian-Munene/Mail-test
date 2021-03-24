@@ -1909,7 +1909,7 @@ __webpack_require__.r(__webpack_exports__);
     addEmail: function addEmail() {
       var _this = this;
 
-      this.axios.post('http://mail-test-laravel.herokuapp.com/api/tests/', this.test, {
+      this.axios.post('https://mail-test-laravel.herokuapp.com/api/tests/', this.test, {
         headers: {
           "Access-Control-Allow-Origin": "*",
           "Access-Control-Allow-Methods": "GET, POST, PATCH, PUT, DELETE, OPTIONS",
@@ -1990,14 +1990,14 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
-      axios.get('http://mail-test-laravel.herokuapp.com/api/tests?page=' + page).then(function (response) {
+      axios.get('https://mail-test-laravel.herokuapp.com/api/tests?page=' + page).then(function (response) {
         _this.tests = response.data;
       });
     },
     deleteTest: function deleteTest(id) {
       var _this2 = this;
 
-      this.axios["delete"]("http://mail-test-laravel.herokuapp.com/api/tests/".concat(id)).then(function (response) {
+      this.axios["delete"]("https://mail-test-laravel.herokuapp.com/api/tests/".concat(id)).then(function (response) {
         var i = _this2.tests.map(function (item) {
           return item.id;
         }).indexOf(id); // find index of your object
@@ -2087,7 +2087,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    this.axios.get("http://mail-test-laravel.herokuapp.com/api/tests/".concat(this.$route.params.id)).then(function (response) {
+    this.axios.get("https://mail-test-laravel.herokuapp.com/api/tests/".concat(this.$route.params.id)).then(function (response) {
       _this.test = response.data;
       console.log(response.data);
     });
@@ -2096,7 +2096,7 @@ __webpack_require__.r(__webpack_exports__);
     updateEmail: function updateEmail() {
       var _this2 = this;
 
-      this.axios.post("http://mail-test-laravel.herokuapp.com/api/tests/".concat(this.$route.params.id), this.test).then(function (response) {
+      this.axios.post("https://mail-test-laravel.herokuapp.com/api/tests/".concat(this.$route.params.id), this.test).then(function (response) {
         _this2.$router.push({
           name: 'home'
         });
@@ -2143,7 +2143,7 @@ __webpack_require__.r(__webpack_exports__);
     search: function search() {
       var _this = this;
 
-      axios.get('http://mail-test-laravel.herokuapp.com/api/tests/search/', {
+      axios.get('https://mail-test-laravel.herokuapp.com/api/tests/search/', {
         params: {
           keyword: this.keyword
         }
